@@ -1,2 +1,31 @@
-<h1>Trees#index</h1>
-<p>Find me in app/views/trees/index.html.erb</p>
+<h1>Trees</h1>
+
+<table>
+<tr>
+  <th>Tree ID</th>
+  <th>Botanical Name</th>
+  <th>Common Name</th>
+  <th>Neighbourhood</th>
+  <th>Diameter</th>
+  <th>Longitude</th>
+  <th>Latitude</th>
+  <th>No. of Cats</th>
+</tr>
+  <% @trees.each do |tree| %>
+  <tr>
+    <td><%= tree.id %></td>
+    <td><%= tree.botanical_name %></td>
+    <td><%= tree.common_name %></td>
+    <td><%= tree.neighbourhood %></td>
+    <td><%= tree.diameter %></td>
+    <td><%= tree.x %></td>
+    <td><%= tree.y %></td>
+    <td><% count = tree.cats.count; if tree.cats.count > 0 %>
+          <%= link_to count, tree %>
+        <% else %>
+          0
+        <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
