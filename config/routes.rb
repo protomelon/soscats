@@ -1,14 +1,17 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: 'cat#index'
+  root to: 'breed#index'
 
-  resources :pages
+  resources :pages, :breeds
   get 'pages/about', to: 'pages#about', as: 'about'
 
-  resources :trees, only: %i[index show]
-  resources :breeds, only: %i[index show]
-  resources :cats, only: %i[index show]
+  get '/breed/:id', to: 'breed#show', id: /\d+/
+  # get '/tree/:id', to: 'tree#show', id: /\d+/
+  # get '/cat/:id', to: 'cat#show', id: /\d+/
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # Not working?
+  # resources :trees, only: %i[index show]
+  # resources :breeds, only: %i[index show]
+  # resources :cats, only: %i[index show]
 end
