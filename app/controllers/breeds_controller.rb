@@ -1,6 +1,6 @@
 class BreedsController < ApplicationController
   def index
-    @breeds = Tree.all
+    @breeds = Breed.all
     @total_breeds = @breeds.count
   end
 
