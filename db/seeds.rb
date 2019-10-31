@@ -53,27 +53,27 @@ require 'faker'
 # puts "#{Tree.count} tree(s)!\n"
 
 ## Cat objects
-# Use of random method found here: https://stackoverflow.com/questions/2752231/random-record-in-activerecord
-# 2.times do
-#   tree = Tree.order('RANDOM()').first
-#   cat_breed = CatBreed.order('RANDOM()').first
+Use of random method found here: https://stackoverflow.com/questions/2752231/random-record-in-activerecord
+2.times do
+  tree = Tree.order('RANDOM()').first
+  cat_breed = CatBreed.order('RANDOM()').first
 
-#   puts "#{Faker::Name.unique.last_name} is a #{cat_breed.name} (#{cat_breed.id}), and should have been in tree #{tree.id}"
+  puts "#{Faker::Name.unique.last_name} is a #{cat_breed.name} (#{cat_breed.id}), and should have been in tree #{tree.id}"
 
-#   cat = Cat.create(
-#     name: Faker::Name.unique.last_name,
-#     breed_id: cat_breed.id,
-#     tree_id: tree.id
-#   )
+  cat = Cat.create(
+    name: Faker::Name.unique.last_name,
+    breed_id: cat_breed.id,
+    tree_id: tree.id
+  )
 
-#   cat.errors.each do |attr, message|
-#     puts "#{attr} #{message}"
-#   end
-# end
+  cat.errors.each do |attr, message|
+    puts "#{attr} #{message}"
+  end
+end
 
-# puts "#{CatBreed.count} cat breed(s)!\n"
-# puts "#{Cat.count} cat(s)!\n"
+puts "#{CatBreed.count} cat breed(s)!\n"
+puts "#{Cat.count} cat(s)!\n"
 
-# Cat.all.each_with_index do |cat, n|
-#   puts "#{n} - Name: #{cat.name}, Breed: #{cat.breed_id}, Tree: #{cat.tree_id}"
-# end
+Cat.all.each_with_index do |cat, n|
+  puts "#{n} - Name: #{cat.name}, Breed: #{cat.breed_id}, Tree: #{cat.tree_id}"
+end
