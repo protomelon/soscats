@@ -1,2 +1,21 @@
-<h1>Breeds#show</h1>
-<p>Find me in app/views/breeds/show.html.erb</p>
+<h1><%= @breed.name %></h1>
+
+ <table>
+  <tr>
+    <td>Description</td>
+    <td><%= @breed.description %></td>
+  </tr>
+  <tr>
+    <td>Temperament</td>
+    <td><%= @breed.temperament %></td>
+  </tr>
+  <tr>
+    <td>Origin</td>
+    <td><%= @breed.origin %></td>
+  </tr>
+  <tr>
+    <td>Friendliness</td>
+    <td><%= @breed.stranger_friendly%></td>
+  </tr>
+</table>
+
