@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'cats/index'
+  get 'cats/show'
   get 'breeds/index'
   get 'breeds/show'
   root to: 'breed#index'
