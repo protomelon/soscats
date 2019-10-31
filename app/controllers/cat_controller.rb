@@ -1,7 +1,7 @@
 class CatController < ApplicationController
   def index
     @cats = Cat.all
-    @total_cats = Cat.all.count
+    @total_cats = @cats.count
   end
 
   def show
