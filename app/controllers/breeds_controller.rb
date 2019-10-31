@@ -6,5 +6,7 @@ class BreedsController < ApplicationController
 
   def show
     @breed = Breed.find(params[:id])
+    @cats = @breed.cats
+    @total_cats = @cats.count
   end
 end
