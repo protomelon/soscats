@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'boot'
-
+# require 'kaminari' # Sol'n from https://github.com/kaminari/kaminari/issues/213
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems

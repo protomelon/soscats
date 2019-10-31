@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: 'breeds#index'
+  root to: 'trees#index'
+
+  # concern :paginatable do
+  #   get '(page/:page)', action: :index, on: :collection, as: ''
+  # end
+
+  # resources :trees, concerns: :paginatable
 
   get 'pages/about', to: 'pages#about', as: 'about'
   get 'breed/index', to: 'breeds#index', as: 'breeds'
-  get 'tree/index', to: 'trees#index', as: 'trees'
   get 'cat/index', to: 'cats#index', as: 'cats'
 
   # get '/breed/:id', to: 'breed#show', id: /\d+/
@@ -13,7 +18,7 @@ Rails.application.routes.draw do
   # get '/cat/:id', to: 'cat#show', id: /\d+/
 
   # Not working?
-  resources :trees, only: %i[index show]
   resources :breeds, only: %i[index show]
   resources :cats, only: %i[index show]
+  resources :trees, only: %i[index show]
 end

@@ -3,7 +3,7 @@
 class TreesController < ApplicationController
   def index
     @trees = Tree.all
-    @total_trees = @trees.count
+    # @trees = Tree.order(:botanical_name).page(params[:page])
   end
 
   def show
