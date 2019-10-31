@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'cat/index'
+  get 'cat/show'
   get 'breed/index'
   get 'breed/show'
   get 'trees/index'
