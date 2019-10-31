@@ -1,2 +1,7 @@
-<h1>Trees#show</h1>
-<p>Find me in app/views/trees/show.html.erb</p>
+<h1>Cats in Tree #<%= @tree.id %></h1>
+
+<ul>
+<% @cats.each do |cat| %>
+  <li><%= link_to cat.name, cat %></li>
+<% end %>
+</ul>

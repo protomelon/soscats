@@ -8,5 +8,6 @@ class TreesController < ApplicationController
 
   def show
     @tree = Tree.find(params[:id])
+    @cats = @tree.cats
   end
 end
