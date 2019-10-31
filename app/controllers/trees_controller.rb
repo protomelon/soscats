@@ -3,7 +3,7 @@
 class TreesController < ApplicationController
   def index
     @trees = Tree.all
-    @total_tree = @trees.count
+    @total_trees = @trees.count
   end
 
   def show
