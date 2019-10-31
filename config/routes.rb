@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'breed/index'
+  get 'breed/show'
   get 'trees/index'
   get 'trees/show'
   root to: 'pages#about'
