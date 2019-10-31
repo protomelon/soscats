@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: 'breed#index'
+  root to: 'breeds#index'
 
-  resources :pages, :breeds
   get 'pages/about', to: 'pages#about', as: 'about'
 
   # get '/breed/:id', to: 'breed#show', id: /\d+/
