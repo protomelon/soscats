@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_31_072205) do
+ActiveRecord::Schema.define(version: 2019_10_31_072353) do
 
   create_table "breeds", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 2019_10_31_072205) do
     t.integer "stranger_friendly"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cats", force: :cascade do |t|
+    t.string "name"
+    t.integer "breed_id", null: false
+    t.integer "tree_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["breed_id"], name: "index_cats_on_breed_id"
+    t.index ["tree_id"], name: "index_cats_on_tree_id"
   end
 
   create_table "trees", force: :cascade do |t|
@@ -36,4 +46,6 @@ ActiveRecord::Schema.define(version: 2019_10_31_072205) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "cats", "breeds"
+  add_foreign_key "cats", "trees"
 end
