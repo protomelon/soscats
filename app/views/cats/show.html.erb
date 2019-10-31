@@ -1,2 +1,16 @@
-<h1>Cats#show</h1>
-<p>Find me in app/views/cats/show.html.erb</p>
+<h1>Cat: <%= @cat.name %></h1>
+
+ <table>
+  <tr>
+    <td>Cat Breed</td>
+    <td><%= link_to @breed.name, @breed %></td>
+  </tr>
+  <tr>
+    <td>Tree Coordinates</td>
+    <td><%= @tree.x %>, <%= @tree.y %></td>
+  </tr>
+  <tr>
+    <td>Tree Neighbourhood</td>
+    <td><%= @tree.neighbourhood %></td>
+  </tr>
+</table>

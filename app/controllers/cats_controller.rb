@@ -8,5 +8,7 @@ class CatsController < ApplicationController
 
   def show
     @cat = Cat.find(params[:id])
+    @breed = Breed.find(@cat.breed.id)
+    @tree = Tree.find(@cat.tree.id)
   end
 end

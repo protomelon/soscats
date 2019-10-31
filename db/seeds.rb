@@ -58,11 +58,11 @@ require 'faker'
 #   tree = Tree.order('RANDOM()').first
 #   cat_breed = Breed.order('RANDOM()').first
 
-#   cat = Cat.create(
-#     name: Faker::Name.unique.last_name,
-#     breed_id: cat_breed.id,
-#     tree_id: tree.id
-#   )
+cat = Cat.create(
+  name: Faker::Name.unique.last_name,
+  breed_id: cat_breed.id,
+  tree_id: tree.id
+)
 
 #   # Error checking
 #   # puts "#{Faker::Name.unique.last_name} is a #{cat_breed.name} (#{cat_breed.id}), and should have been in tree #{tree.id}"
