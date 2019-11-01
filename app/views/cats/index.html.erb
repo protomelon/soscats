@@ -1,5 +1,11 @@
 <h1>Cats</h1>
 
+<%= form_with(url: results_cats_path, method: "get", local: true) do %>
+  <%= label_tag(:query, "Search: ")%>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Find my Baby") %>
+<% end %>
+
 <ul>
   <% @cats.each do |cat| %>
     <li><%= link_to cat.name, cat %></li>

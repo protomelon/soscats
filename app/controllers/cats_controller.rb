@@ -6,6 +6,11 @@ class CatsController < ApplicationController
     @total_cats = @cats.count
   end
 
+  def search_results
+    @query = params[:query]
+    @cats = Cat.where('name LIKE ?', "%#{@query}")
+  end
+
   def show
     @cat = Cat.find(params[:id])
     @breed = Breed.find(@cat.breed.id)

@@ -3,12 +3,6 @@
 Rails.application.routes.draw do
   root to: 'trees#index'
 
-  # concern :paginatable do
-  #   get '(page/:page)', action: :index, on: :collection, as: ''
-  # end
-
-  # resources :trees, concerns: :paginatable
-
   get 'pages/about', to: 'pages#about', as: 'about'
   get 'breed/index', to: 'breeds#index', as: 'breeds'
   get 'cat/index', to: 'cats#index', as: 'cats'
@@ -19,6 +13,10 @@ Rails.application.routes.draw do
 
   # Not working?
   resources :breeds, only: %i[index show]
-  resources :cats, only: %i[index show]
+  resources :cat, only: %i[index show] do
+    collection do
+      get 'search_results'
+    end
+  end
   resources :trees, only: %i[index show]
 end
